@@ -54,21 +54,15 @@ if [ -f /opt/.ssh/id_rsa ]; then
   ssh-keyscan github.com >> ~/.ssh/known_hosts
   ssh-keyscan bitbucket.org >> ~/.ssh/known_hosts
 
-  if [ $ODOO_ENTERPRISE == 1 ]; then
-    if [ ! -d enterprise ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/enterprise.git
-    fi
+  if [ ! -d nds-third-party ]; then
+    git clone --single-branch -b $ODOO_VERSION https://nds:mqi4KiYxnVuz64kWc8PS@gitlab.com/nds-odoo/nds-third-part.git
   fi
-
-  if [ $TRUSTCODE_APPS == 1 ]; then
-    if [ ! -d trustcode-apps ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/advanced-apps.git
-    fi
+  if [ ! -d odoo-nds ]; then
+    git clone --single-branch -b $ODOO_VERSION https://nds:FkkpnHVwcLUcccqZ5PAQ@gitlab.com/nds-odoo/odoo-nds.git
   fi
-
-  if [ $USE_SPECIFIC_REPO == 1 ]; then
-    if [ ! -d $CLIENT_REPOSITORY ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/$CLIENT_REPOSITORY.git
+  if [ ! -d nds-report ]; then
+    if [ $CUSTOM_REPORTS == 1 ]; then
+      git clone --single-branch -b $ODOO_VERSION https://nds:2Lu26iWpeXwErx_yHoNc@gitlab.com/nds-odoo/nds-reports.git
     fi
   fi
 
