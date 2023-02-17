@@ -11,7 +11,10 @@ RUN wget https://github.com/odoo/odoo/archive/15.0.zip -O odoo.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/15.0.zip -O account-financial-reporting.zip && \
     wget https://github.com/oca/mis-builder/archive/15.0.zip -O mis-builder.zip && \
     wget https://github.com/OCA/commission/archive/15.0.zip -O commission.zip && \
-    wget https://github.com/odoo/design-themes/archive/15.0.zip -O design-themes.zip
+    wget https://github.com/odoo/design-themes/archive/15.0.zip -O design-themes.zip && \
+    wget https://github.com/Trust-Code/trustcode-addons/archive/15.0.zip -O trustcode-addons.zip && \
+    wget https://github.com/Trust-Code/odoo-brasil/archive/15.0.zip -O odoo-brasil.zip && \
+    wget https://github.com/code-137/odoo-apps/archive/15.0.zip -O code137-apps.zip
 
 RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-15.0 odoo && \
     unzip -q web.zip && rm web.zip && mv web-15.0 web && \
@@ -22,6 +25,9 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-15.0 odoo && \
     unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-15.0 mis-builder && \
     unzip -q commission.zip && rm commission.zip && mv commission-15.0 commission && \
     unzip -q design-themes.zip && rm design-themes.zip && mv design-themes-15.0 design-themes && \
+    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-15.0 trustcode-addons && \
+    unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-15.0 odoo-brasil && \
+    unzip -q code137-apps.zip && rm code137-apps.zip && mv odoo-apps-15.0 code137-apps && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
