@@ -58,7 +58,7 @@ if [ -f /opt/.ssh/id_rsa ]; then
     git clone --single-branch -b $ODOO_VERSION https://nds:mqi4KiYxnVuz64kWc8PS@gitlab.com/nds-odoo/nds-third-part.git
   fi
   if [ ! -d odoo-nds ]; then
-    git clone --single-branch -b $ODOO_VERSION https://nds:FkkpnHVwcLUcccqZ5PAQ@gitlab.com/nds-odoo/odoo-nds.git
+    git clone --single-branch -b $ODOO_NDS_BRANCH https://nds:FkkpnHVwcLUcccqZ5PAQ@gitlab.com/nds-odoo/odoo-nds.git
   fi
   if [ ! -d nds-report ]; then
     if [ $CUSTOM_REPORTS == 1 ]; then
